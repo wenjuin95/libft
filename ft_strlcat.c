@@ -1,8 +1,10 @@
-int	ft_strlcat(char *dest, const char *src, unsigned int n)
+#include "libft.h"
+
+int	ft_strlcat(char *dest, const char *src, size_t n)
 {
-	unsigned int	d_len;
-	unsigned int	s_len;
-	unsigned int	i;
+	size_t	d_len;
+	size_t	s_len;
+	size_t	i;
 
 	d_len = 0;
 	while (dest[d_len])

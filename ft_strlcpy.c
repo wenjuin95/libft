@@ -1,6 +1,8 @@
-int	ft_strlcpy(char *dest, const char *src, unsigned int n)
+#include "libft.h"
+
+int	ft_strlcpy(char *dest, const char *src, size_t n)
 {
-	unsigned int	i;
+	size_t	i;
 
 	i = 0;
 	if (n == 0)
@@ -11,7 +13,7 @@ int	ft_strlcpy(char *dest, const char *src, unsigned int n)
 		}
 		return (i);
 	}
-	while (src[i] && i < n-1)
+	while (src[i] && i < n - 1)
 	{
 		dest[i] = src[i];
 		i++;
