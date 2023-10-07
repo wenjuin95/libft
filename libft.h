@@ -13,10 +13,10 @@ int		ft_isprint(int c);
 
 /* string */
 char	*ft_strchr(const char *s, int c);
-char	*ft_strnstr(const char *haystack, const char *needle, size_t n);
+char	*ft_strnstr(char const *haystack, char const *needle, size_t n);
 char	*ft_strrchr(const char *s, int c);
-int		ft_strlcat(char *dest, const char *src, size_t n);
-int		ft_strlcpy(char *dest, const char *src, size_t n);
+int		ft_strlcat(char *dest, char *src, size_t n);
+int		ft_strlcpy(char *dest, char *src, size_t n);
 int		ft_strlen(char *str);
 int		ft_strncmp(const char *s1, const char *s2, size_t n);
 char	*ft_strdup(const char *s);
