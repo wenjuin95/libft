@@ -20,6 +20,7 @@ int		ft_strlcpy(char *dest, char *src, size_t n);
 int		ft_strlen(char *str);
 int		ft_strncmp(const char *s1, const char *s2, size_t n);
 char	*ft_strdup(const char *s);
+char	*ft_substr(char const *s, unsigned int start, size_t len);
 
 /* memory */
 void	ft_bzero(void *s, size_t n);
@@ -34,5 +35,9 @@ void	*ft_calloc(size_t nmemb, size_t size);
 int		ft_atoi(char *str);
 int		ft_tolower(int c);
 int		ft_toupper(int c);
+
+/* output */
+void	ft_putchar_fd(char c, int fd);
+void	ft_putstr_fd(char *s, int fd);
 
 #endif

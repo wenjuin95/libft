@@ -47,5 +47,5 @@ char	*ft_substr(char const *s, unsigned int start, size_t len)
 //         printf("Substring extraction failed.\n");
 //     }
 
-    return 0;
-}
+//     return 0;
+// }
