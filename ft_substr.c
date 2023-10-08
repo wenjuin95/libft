@@ -7,11 +7,7 @@ char	*ft_substr(char const *s, unsigned int start, size_t len)
 	size_t	i;
 	char	*substring;
 
-	s_len = 0;
-	while (s[s_len])
-	{
-		s_len++;
-	}
+	s_len = ft_strlen(s);
 	if (start >= s_len)
 		return (0);
 	if (len > (s_len - start))
@@ -28,7 +24,6 @@ char	*ft_substr(char const *s, unsigned int start, size_t len)
 		i++;
 	}
 	substring[sub_len] = '\0';
-
 	return (substring);
 }
 
