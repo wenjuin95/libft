@@ -4,9 +4,11 @@ void	ft_putstr_fd(char *s, int fd)
 {
 	int	i;
 
+	i = 0;
 	while (s[i])
 	{
 		write(fd, &s[i], 1);
+		i++;
 	}
 }
 /*
@@ -16,7 +18,7 @@ void	ft_putstr_fd(char *s, int fd)
 int main() {
     int fd = STDOUT_FILENO; // Use the standard output file descriptor (stdout)
 
-    putstr_fd("Hello, World!\n", fd); // Write the string to stdout
+    ft_putstr_fd("Hello, World!", fd); // Write the string to stdout
 
     return 0;
 }*/

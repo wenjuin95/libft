@@ -1,4 +1,4 @@
-//#include "libft.h"
+#include "libft.h"
 
 void	ft_putnbr_fd(int n, int fd)
 {
@@ -25,7 +25,8 @@ void	ft_putnbr_fd(int n, int fd)
 		ft_putchar_fd(nb + 48, fd);
 }
 /*
-#include<limits.h>
+#include <stdio.h>
+#include <limits.h>
 int main(void)
 {
 	int	fd = 1;
