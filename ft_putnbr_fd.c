@@ -7,9 +7,7 @@ void	ft_putnbr_fd(int n, int fd)
 	nb = n;
 	if (nb == -2147483648)
 	{
-		ft_putchar_fd('-', fd);
-		ft_putchar_fd('2', fd);
-		nb = 147483648;
+		write(fd, "-2147483648", 11);
 	}
 	if (nb < 0)
 	{
