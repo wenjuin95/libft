@@ -36,9 +36,10 @@ void	*ft_calloc(size_t nmemb, size_t size);
 /* convert */
 char	*ft_itoa(int n);
 int		ft_atoi(char *str);
-void	ft_striteri(char *s, void (*f)(unsigned int, char *));
 int		ft_tolower(int c);
 int		ft_toupper(int c);
+void	ft_striteri(char *s, void (*f)(unsigned int, char *));
+char	*ft_strmapi(char const *s, char (*f)(unsigned int, char));
 
 /* output */
 void	ft_putchar_fd(char c, int fd);
