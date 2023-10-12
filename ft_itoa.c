@@ -43,8 +43,6 @@ char	*ft_itoa(int n)
 	return (str_nb);
 }
 
-
-
 // #include <stdio.h>
 // int main() {
 //     int n = 12345;
