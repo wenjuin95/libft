@@ -24,12 +24,3 @@ int	ft_atoi(char *str)
 	}
 	return (result * sign);
 }
-
-// #include <stdio.h>
-// #include <stdlib.h>
-// int main()
-// {
-// 	char *str = "          -123ad10";
-// 	printf("%d\n", atoi(str));
-// 	printf("%d\n", ft_atoi(str));
-// }
