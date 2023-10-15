@@ -2,19 +2,19 @@
 
 char	*ft_strrchr(const char *s, int c)
 {
-	const char	*last_occurence;
+	char	*last_occurence;
 
 	last_occurence = NULL;
 	while (*s)
 	{
-		if (*s == c)
-			last_occurence = s;
+		if (*s == (char)c)
+			last_occurence = (char *)s;
 		s++;
 	}
-	if (*s == c)
+	if (*s == (char)c)
 		return ((char *)s);
 	else
-		return ((char *)last_occurence);
+		return (last_occurence);
 }
 
 // #include <stdio.h>

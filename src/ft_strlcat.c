@@ -1,6 +1,6 @@
 #include "libft.h"
 
-int	ft_strlcat(char *dest, char *src, size_t n)
+size_t	ft_strlcat(char *dest, char *src, size_t size)
 {
 	size_t	d_len;
 	size_t	t_len;
@@ -9,12 +9,12 @@ int	ft_strlcat(char *dest, char *src, size_t n)
 	if (dest == 0 || src == 0)
 		return (0);
 	d_len = ft_strlen(dest);
-	if (n <= d_len)
-		return (n + ft_strlen(src));
+	if (size <= d_len)
+		return (size + ft_strlen(src));
 	else
 		t_len = d_len + ft_strlen(src);
 	i = 0;
-	while (src[i] && d_len < n - 1)
+	while (src[i] && d_len < size - 1)
 	{
 		dest[d_len] = src[i];
 		d_len++;
