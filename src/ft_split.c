@@ -1,4 +1,7 @@
-#include "libft.h"
+//#include "libft.h"
+#include <stdlib.h>
+#include <stdio.h>
+
 
 static size_t	count_string(char const *s, char c)
 {
@@ -61,7 +64,7 @@ char	**ft_split(char const *s, char c)
 		while (*s && *s != c)
 			s++;
 	}
-	sub_string[i] = '\0';
+	*sub_string[i] = '\0';
 	return (sub_string);
 }
 
