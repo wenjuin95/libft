@@ -1,3 +1,15 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   libft.h                                            :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: welow <welow@student.42.fr>                +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2023/10/16 12:04:25 by welow             #+#    #+#             */
+/*   Updated: 2023/10/16 12:04:25 by welow            ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #ifndef LIBFT_H
 # define LIBFT_H
 # include <stdlib.h>
@@ -36,7 +48,7 @@ void	*ft_calloc(size_t nmemb, size_t size);
 
 /* convert */
 char	*ft_itoa(int n);
-int		ft_atoi(char *str);
+int		ft_atoi(const char *str);
 int		ft_tolower(int c);
 int		ft_toupper(int c);
 void	ft_striteri(char *s, void (*f)(unsigned int, char *));
