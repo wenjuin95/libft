@@ -6,7 +6,7 @@
 /*   By: welow <welow@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/16 11:54:39 by welow             #+#    #+#             */
-/*   Updated: 2023/10/16 14:05:05 by welow            ###   ########.fr       */
+/*   Updated: 2023/10/16 21:51:24 by welow            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,18 +14,12 @@
 
 void	*ft_calloc(size_t nmemb, size_t size)
 {
-	char	*ptr;
-	size_t	i;
+	void	*ptr;
 
 	ptr = (void *)malloc(nmemb * size);
 	if (ptr == NULL)
 		return (NULL);
-	i = 0;
-	while (i < nmemb * size)
-	{
-		ptr[i] = 0;
-		i++;
-	}
+	ft_bzero(ptr, (nmemb * size));
 	return (ptr);
 }
 

@@ -23,58 +23,60 @@ static size_t	count_string(char const *s, char c)
 	{
 		while (s[i] == c)
 			i++;
+		if (s[i] != '\0')
+			count++;
 		while (s[i] != c && s[i])
 			i++;
-		count++;
 	}
 	return (count);
 }
 
-static char	*string_len(char const *s, char c)
+char	*strcopy(const char *str, size_t n)
 {
-	int		len;
-	int		i;
-	char	*word;
-
-	i = 0;
-	len = count_string(s, c);
-	word = (char *)malloc(sizeof(char) * (len + 1));
-	if (word == NULL)
+	size_t	i;
+	char	*result;
+	if (str == NULL)
 		return (NULL);
-	while (i < len)
+	result = malloc(sizeof(char) * n + 1);
+	if (result == NULL)
+		return (NULL);
+	i = 0;
+	while (i < n)
 	{
-		word[i] = s[i];
+		result[i] = str[i];
 		i++;
 	}
-	word[i] = '\0';
-	return (word);
+	result[i] = '\0';
+	return (result);
 }
 
 char	**ft_split(char const *s, char c)
 {
-	char	**sub_string;
-	int		i;
-	int		sub_len;
-
-	sub_len = count_string(s, c);
+	size_t	i;
+	size_t	len;
+	char	**split;
+	char	**sub_str;
+	
 	i = 0;
-	sub_string = (char **)malloc(sizeof(char *) * (sub_len + 1));
-	if (sub_string == NULL)
-		return (NULL);
-	while (*s)
-	{
-		while (*s && *s == c)
-			s++;
-		if (*s != '\0')
-		{
-			sub_string[i] = string_len(s, c);
-			i++;
-		}
-		while (*s && *s != c)
-			s++;
-	}
-	*sub_string[i] = '\0';
-	return (sub_string);
+    len = count_string(s, c);
+    split = (char **)malloc(sizeof(char *) * (len + 1)); 
+    sub_str = split; 
+    if (s == NULL || split == NULL)
+        return NULL;
+    while (*s)
+    {
+        while (*s && *s == c)
+            s++;
+        if (*s == '\0')
+            break;
+        const char *start = s;
+        while (*s && *s != c)
+            s++;
+        split[i] = strcopy(start, s - start);
+        i++;
+    }
+    split[i] = NULL; 
+    return sub_str;
 }
 
 // int main() {
