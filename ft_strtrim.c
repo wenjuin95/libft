@@ -12,20 +12,6 @@
 
 #include "libft.h"
 
-static size_t	check_str(char c, char const *str)
-{
-	size_t	i;
-
-	i = 0;
-	while (str[i])
-	{
-		if (str[i] == c)
-			return (1);
-		i++;
-	}
-	return (0);
-}
-
 char	*ft_strtrim(char const *s1, char const *set)
 {
 	char	*trim;
@@ -37,10 +23,10 @@ char	*ft_strtrim(char const *s1, char const *set)
 	start = 0;
 	if (s1 == NULL || set == NULL)
 		return (NULL);
-	while (s1[start] && check_str(s1[start], set))
+	while (s1[start] && ft_strchr(set, s1[start]))
 		start++;
 	end = ft_strlen(s1);
-	while (end > start && check_str(s1[end - 1], set))
+	while (end > start && ft_strchr(set, s1[end - 1]))
 		end--;
 	trim = (char *)malloc(sizeof(char) * (end - start + 1));
 	if (trim == NULL)

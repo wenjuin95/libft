@@ -12,23 +12,13 @@
 
 #include "libft.h"
 
-static size_t	str_len(char const *str)
-{
-	size_t	i;
-
-	i = 0;
-	while (str[i])
-		i++;
-	return (i);
-}
-
 char	*ft_strmapi(char const *s, char (*f)(unsigned int, char))
 {
 	size_t	i;
 	char	*result;
 
 	i = 0;
-	result = (char *)malloc(sizeof(char) * (str_len(s) + 1));
+	result = (char *)malloc(sizeof(char) * (ft_strlen(s) + 1));
 	if (result == NULL)
 		return (NULL);
 	while (s[i])
@@ -46,10 +36,7 @@ char	*ft_strmapi(char const *s, char (*f)(unsigned int, char))
 // char uppercase(unsigned int i, char c)
 // {
 // 	(void)i;
-//     if (i % 2 == 0)
-//         return toupper(c);
-//     else
-//         return tolower(c);
+//     return toupper(c);
 // }
 
 // int main() {

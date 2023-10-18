@@ -6,13 +6,13 @@
 /*   By: welow <welow@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/16 11:56:42 by welow             #+#    #+#             */
-/*   Updated: 2023/10/16 11:56:42 by welow            ###   ########.fr       */
+/*   Updated: 2023/10/17 13:59:52 by welow            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-static size_t	count_string(char const *s, char c)
+static size_t	count_sub_len(char const *s, char c)
 {
 	size_t	count;
 	size_t	i;
@@ -31,10 +31,11 @@ static size_t	count_string(char const *s, char c)
 	return (count);
 }
 
-char	*strcopy(const char *str, size_t n)
+char	*copy_sub(const char *str, size_t n)
 {
 	size_t	i;
 	char	*result;
+
 	if (str == NULL)
 		return (NULL);
 	result = malloc(sizeof(char) * n + 1);
@@ -52,31 +53,30 @@ char	*strcopy(const char *str, size_t n)
 
 char	**ft_split(char const *s, char c)
 {
-	size_t	i;
-	size_t	len;
-	char	**split;
-	char	**sub_str;
-	
+	size_t		i;
+	size_t		len;
+	char		**split;
+	const char	*sub_str;
+
 	i = 0;
-    len = count_string(s, c);
-    split = (char **)malloc(sizeof(char *) * (len + 1)); 
-    sub_str = split; 
-    if (s == NULL || split == NULL)
-        return NULL;
-    while (*s)
-    {
-        while (*s && *s == c)
-            s++;
-        if (*s == '\0')
-            break;
-        const char *start = s;
-        while (*s && *s != c)
-            s++;
-        split[i] = strcopy(start, s - start);
-        i++;
-    }
-    split[i] = NULL; 
-    return sub_str;
+	len = count_sub_len(s, c);
+	split = (char **)malloc(sizeof(char *) * (len + 1));
+	if (split == NULL)
+		return (NULL);
+	while (*s)
+	{
+		while (*s && *s == c)
+			s++;
+		if (*s == '\0')
+			break ;
+		sub_str = s;
+		while (*s && *s != c)
+			s++;
+		split[i] = copy_sub(sub_str, s - sub_str);
+		i++;
+	}
+	split[i] = NULL;
+	return (split);
 }
 
 // int main() {

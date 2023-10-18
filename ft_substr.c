@@ -21,19 +21,17 @@ char	*ft_substr(char const *s, unsigned int start, size_t len)
 	if (s == NULL)
 		return (NULL);
 	if ((size_t)ft_strlen(s) < start)
-	{
-		return (ft_strdup(""));
-	}
+		len = 0;
+	else if (len > (ft_strlen(s) - start))
+		len = ft_strlen(s) - start;
 	size = ft_strlen(s + start);
-	if (size < len)
-		len = size;
 	sub_str = (char *)malloc(sizeof(char) * (len + 1));
 	if (sub_str == NULL)
 		return (NULL);
 	i = 0;
 	while (i < len)
 	{
-		sub_str[i] = s[start + i];
+		sub_str[i] = s[i + start];
 		i++;
 	}
 	sub_str[i] = '\0';
