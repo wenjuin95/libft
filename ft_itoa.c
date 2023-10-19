@@ -14,27 +14,32 @@
 
 static size_t	num_len(int n)
 {
-	size_t	count;
-	long	nb;
+	size_t	len;
 
-	nb = n;
-	count = 0;
-	if (nb == 0)
-		return (1);
-	if (nb < 0)
+	len = 0;
+	if (n < 1)
+		len++;
+	while (n != 0)
 	{
-		count += 1;
-		nb = -nb;
+		n /= 10;
+		len++;
 	}
-	while (nb > 0)
-	{
-		nb /= 10;
-		count++;
-	}
-	return (count);
+	return (len);
 }
 
-static char	*reserve(size_t n)
+static long	check_val(long n)
+{
+	long	nb;
+
+	nb = 1;
+	if (n < 0)
+		nb *= -n;
+	else
+		nb *= n;
+	return (nb);
+}
+
+static char	*n_memory(size_t n)
 {
 	char	*s;
 
@@ -46,32 +51,31 @@ static char	*reserve(size_t n)
 
 char	*ft_itoa(int n)
 {
+	size_t	nb;
+	int		sign;
+	int		len;
 	char	*str;
-	size_t	num;
-	size_t	len;
-	long	nb;
 
-	nb = n;
-	len = num_len(nb);
-	str = reserve(len);
-	if (nb < 0)
-	{
-		str[0] = '-';
-		num = -nb;
-	}
-	else
-		num = nb;
-	if (num == 0)
-		str[0] = '0';
+	sign = 0;
+	if (n < 0)
+		sign = 1;
+	len = num_len(n);
+	str = n_memory(len);
+	if (str == NULL)
+		return (NULL);
 	str[len] = '\0';
-	while (num > 0)
+	nb = check_val(n);
+	while (len)
 	{
-		str[len - 1] = (num % 10) + '0';
-		num = num / 10;
 		len--;
+		str[len] = nb % 10 + '0';
+		nb /= 10;
 	}
+	if (sign != 0)
+		*str = '-';
 	return (str);
 }
+
 // #include <stdio.h>
 // int main() {
 //     int n = -2147483648;

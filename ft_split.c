@@ -17,6 +17,8 @@ static size_t	count_sub_len(char const *s, char c)
 	size_t	count;
 	size_t	i;
 
+	if (s == 0 || c == 0)
+		return (0);
 	i = 0;
 	count = 0;
 	while (s[i])
@@ -31,7 +33,7 @@ static size_t	count_sub_len(char const *s, char c)
 	return (count);
 }
 
-char	*copy_sub(const char *str, size_t n)
+static char	*copy_sub(const char *str, size_t n)
 {
 	size_t	i;
 	char	*result;
@@ -54,15 +56,15 @@ char	*copy_sub(const char *str, size_t n)
 char	**ft_split(char const *s, char c)
 {
 	size_t		i;
-	size_t		len;
 	char		**split;
 	const char	*sub_str;
 
-	i = 0;
-	len = count_sub_len(s, c);
-	split = (char **)malloc(sizeof(char *) * (len + 1));
+	if (s == NULL)
+		return (NULL);
+	split = (char **)malloc(sizeof(char *) * ((count_sub_len(s, c)) + 1));
 	if (split == NULL)
 		return (NULL);
+	i = 0;
 	while (*s)
 	{
 		while (*s && *s == c)
