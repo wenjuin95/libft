@@ -34,7 +34,7 @@ ${NAME}: ${OBJS}
 bonus: ${OBJSB}
 	${AR} ${NAME} ${OBJSB}
 
-all: ${NAME}
+all: ${NAME} bonus
 
 clean:
 	${RM} ${OBJS} ${OBJSB}

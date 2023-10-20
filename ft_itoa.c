@@ -12,7 +12,7 @@
 
 #include "libft.h"
 
-static size_t	num_len(int n)
+static size_t	count_len(int n)
 {
 	size_t	len;
 
@@ -27,7 +27,7 @@ static size_t	num_len(int n)
 	return (len);
 }
 
-static long	check_val(long n)
+static long	check_num(long n)
 {
 	long	nb;
 
@@ -59,12 +59,12 @@ char	*ft_itoa(int n)
 	sign = 0;
 	if (n < 0)
 		sign = 1;
-	len = num_len(n);
+	len = count_len(n);
 	str = n_memory(len);
 	if (str == NULL)
 		return (NULL);
 	str[len] = '\0';
-	nb = check_val(n);
+	nb = check_num(n);
 	while (len)
 	{
 		len--;

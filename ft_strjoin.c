@@ -6,7 +6,7 @@
 /*   By: welow <welow@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/16 11:57:15 by welow             #+#    #+#             */
-/*   Updated: 2023/10/19 17:10:52 by welow            ###   ########.fr       */
+/*   Updated: 2023/10/20 15:40:26 by welow            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,14 +17,14 @@ char	*ft_strjoin(char const *s1, char const *s2)
 	char	*str;
 	int		i;
 	int		j;
-	int		l_join;
+	int		total_len;
 
 	if (s1 == 0 || s2 == 0)
 		return (0);
 	i = 0;
 	j = 0;
-	l_join = ft_strlen(s1) + ft_strlen(s2);
-	str = (char *)malloc(sizeof(char) * (l_join + 1));
+	total_len = ft_strlen(s1) + ft_strlen(s2);
+	str = (char *)malloc(sizeof(char) * (total_len + 1));
 	if (str == NULL)
 		return (NULL);
 	while (s1[i])
