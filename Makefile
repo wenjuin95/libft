@@ -9,8 +9,6 @@ SRC = ft_atoi.c ft_bzero.c ft_calloc.c ft_isalnum.c ft_isalpha.c \
 BONUS = ft_lstadd_back.c ft_lstadd_front.c ft_lstdelone.c ft_lstlast.c ft_lstnew.c \
 				ft_lstsize.c ft_lstclear.c ft_lstiter.c ft_lstmap.c
 
-INC = libft.h
-
 OBJS = ${SRC:.c=.o}
 
 OBJSB = ${BONUS:.c=.o}
@@ -26,7 +24,7 @@ AR = ar rcs
 RM = rm -f
 
 %.o : %.c
-	${CC} ${CFLAGS} -c -I ${INC} $< -o ${<:.c=.o}
+	${CC} ${CFLAGS} -c $< -o ${<:.c=.o}
 
 ${NAME}: ${OBJS}
 	${AR} ${NAME} ${OBJS}

@@ -27,21 +27,13 @@ void	ft_striteri(char *s, void (*f)(unsigned int, char *))
 // #include <stdio.h>
 // #include <ctype.h>
 
-// void uppercase(unsigned int index, char *ch)
+// void print_char_and_index(unsigned int index, char *ch) 
 // {
-// 	(void)index;
-// 	*ch = toupper(*ch);
+//     printf("Character at index %u: %c\n", index, *ch);
 // }
 
-// int main() {
-//     char str[] = "hello world";
-
-//     printf("Original string: %s\n", str);
-
-//     // Apply the capitalize function to each character in the string
-//     ft_striteri(str, uppercase);
-
-//     printf("Capitalized string: %s\n", str);
-
-//     return 0;
+// int main() 
+// {
+//     char myString[] = "Hello, World!";
+//     ft_striteri(myString, print_char_and_index);
 // }
