@@ -33,7 +33,6 @@ char	*ft_strmapi(char const *s, char (*f)(unsigned int, char))
 }
 
 // #include <stdio.h>
-// #include <ctype.h>
 
 // char encrypt(unsigned int index, char c)
 // {
@@ -55,6 +54,5 @@ char	*ft_strmapi(char const *s, char (*f)(unsigned int, char))
 
 //     free(encryptedString);
 //     free(decryptedString);
-    
 //     return 0;
 // }
