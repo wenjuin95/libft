@@ -33,26 +33,24 @@ char	*ft_strmapi(char const *s, char (*f)(unsigned int, char))
 }
 
 // #include <stdio.h>
+// #include <ctype.h>
 
-// char encrypt(unsigned int index, char c)
+// char uppercase(unsigned int i, char c)
 // {
-//     return c + 1;
-// }
-// char decrypt(unsigned int index, char c)
-// {
-//     return c - 1;
+// 	(void)i;
+//     return toupper(c);
 // }
 
-// int main()
-// {
-//     char myString[] = "Hello, World!";
-//     char *encryptedString = ft_strmapi(myString, encrypt);
-//     printf("Original String: %s\n", myString);
-//     printf("Encrypted String: %s\n", encryptedString);
-//     char *decryptedString = ft_strmapi(encryptedString, decrypt);
-//     printf("Decrypted String: %s\n", decryptedString);
+// int main() {
+//     char str[] = "hello, world!";
 
-//     free(encryptedString);
-//     free(decryptedString);
+//     printf("Original string: %s\n", str);
+
+//     // Apply the capitalize function to each character in the string
+//     char *result = ft_strmapi(str, &uppercase);
+
+//     printf("Capitalized string: %s\n", result);
+// 	free(result);
+
 //     return 0;
 // }

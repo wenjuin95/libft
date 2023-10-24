@@ -40,11 +40,10 @@ char	*ft_strnstr(char const *haystack, char const *needle, size_t n)
 
 // #include <stdio.h>
 // #include <stdlib.h>
-// #include <string.h>
 // int main() {
 //     const char *haystack = "The quick brown fox jumps over the lazy dog";
 //     const char *needle = "fox";
-// 	size_t len = strlen(haystack);
+// 	size_t len = 30;
 
 //     char *result = ft_strnstr(haystack, needle, len);
 

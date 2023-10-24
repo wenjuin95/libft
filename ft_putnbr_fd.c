@@ -6,7 +6,7 @@
 /*   By: welow <welow@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/16 11:56:20 by welow             #+#    #+#             */
-/*   Updated: 2023/10/16 15:54:41 by welow            ###   ########.fr       */
+/*   Updated: 2023/10/24 14:00:58 by welow            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,11 +22,7 @@ void	ft_putnbr_fd(int n, int fd)
 		ft_putchar_fd('-', fd);
 		nb *= -1;
 	}
-	if (nb == -2147483648)
-	{
-		write(fd, "2147483648", 10);
-	}
-	else if (nb >= 10)
+	if (nb >= 10)
 	{
 		ft_putnbr_fd(nb / 10, fd);
 		ft_putnbr_fd(nb % 10, fd);
