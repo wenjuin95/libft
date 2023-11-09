@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_putnbr_fd.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: welow <welow@student.42.fr>                +#+  +:+       +#+        */
+/*   By: welow <welow@student.42kl.edu.my>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/16 11:56:20 by welow             #+#    #+#             */
-/*   Updated: 2023/10/24 14:00:58 by welow            ###   ########.fr       */
+/*   Updated: 2023/11/09 18:51:48 by welow            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,10 +25,9 @@ void	ft_putnbr_fd(int n, int fd)
 	if (nb >= 10)
 	{
 		ft_putnbr_fd(nb / 10, fd);
-		ft_putnbr_fd(nb % 10, fd);
+		nb %= 10;
 	}
-	else
-		ft_putchar_fd(nb + 48, fd);
+	ft_putchar_fd(nb + 48, fd);
 }
 /*
 #include <stdio.h>

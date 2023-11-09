@@ -6,7 +6,7 @@
 /*   By: welow <welow@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/16 11:56:14 by welow             #+#    #+#             */
-/*   Updated: 2023/10/24 13:57:36 by welow            ###   ########.fr       */
+/*   Updated: 2023/10/19 17:06:47 by welow            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,8 +18,12 @@ void	ft_putendl_fd(char *s, int fd)
 
 	if (s == NULL)
 		return ;
-	i = ft_strlen(s);
-	write(fd, s, i);
+	i = 0;
+	while (s[i])
+	{
+		write(fd, &s[i], 1);
+		i++;
+	}
 	write(fd, "\n", 1);
 }
 
