@@ -70,6 +70,9 @@
 **`ft_putendl_fd`**: Outputs a string followed by a newline to a specified file descriptor.
 
 **`ft_putnbr_fd`**: Outputs an integer to a specified file descriptor.
+<hr>
+
+<h4>In this part we will learn how to do link list with these function</h4>
 
 **`ft_lstnew`**: Creates a new linked list node.
 
