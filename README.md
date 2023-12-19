@@ -1,7 +1,7 @@
 # libft
 
 
-<h1><b>this project is to learning how the standard functions of C programming work and coding them from scratch and make our own library</b></h1>
+<h4><b>this project is to learning how the standard functions of C programming work and coding them from scratch and make our own library</b></h4>
 
 **`isalpha`**: Checks if a character is an alphabetic character.
 
