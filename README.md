@@ -1,7 +1,7 @@
 # libft
 
 
-<b>this project is to build a library with these function</b>
+<h1><b>this project is to build a library with these function</b></h1>
 
 **`isalpha`**: Checks if a character is an alphabetic character.
 
