@@ -15,12 +15,14 @@
 void	*ft_memchr(const void *s, int c, size_t n)
 {
 	size_t			i;
-
+	char			*str;
+	
+	str = (void *)s;
 	i = 0;
 	while (i < n)
 	{
-		if (*(((unsigned char *)s) + i) == (unsigned char)c)
-			return (((unsigned char *)s) + i);
+		if (str[i] == (unsigned char)c) //unsigned char: store only positive values
+			return (&str[i]); //return the address of the first occurence of c
 		i++;
 	}
 	return (NULL);
