@@ -3,6 +3,8 @@
 
 <h4><b>this project is to learning how the standard functions of C programming work and coding them from scratch and make our own library</b></h4>
 
+<h2>implement the original function</h2>
+
 **`isalpha`**: Checks if a character is an alphabetic character.
 
 **`isdigit`**: Checks if a character is a digit.
@@ -49,6 +51,8 @@
 
 **`atoi`**: Converts a string representation of an integer to an integer value.
 
+<h2>implement with the define given</h2>
+
  **`ft_striteri`**: Applies a function to each character of a string with its index.
 
 **`ft_strmapi`**: Applies a function to each character of a string and creates a new string with the results.
@@ -72,7 +76,7 @@
 **`ft_putnbr_fd`**: Outputs an integer to a specified file descriptor.
 <hr>
 
-<h4>In this part we will learn how to do link list with these function</h4>
+<h2>implement function for link list</h2>
 
 **`ft_lstnew`**: Creates a new linked list node.
 
