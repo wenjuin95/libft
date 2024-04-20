@@ -14,8 +14,8 @@
 
 int	ft_toupper(int c)
 {
-	if (c >= 97 && c <= 122)
-		return (c - 97 + 65);
+	if (c >= 'a' && c <= 'z')
+		return (c - 'a' + 'A'); //make c = 0; assign 97(A) for it
 	return (c);
 }
 
