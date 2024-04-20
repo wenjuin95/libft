@@ -12,16 +12,16 @@
 
 #include "libft.h"
 
-void	*ft_calloc(size_t nmemb, size_t size)
+void	*ft_calloc(size_t len, size_t size)
 {
 	void	*ptr;
 
-	if (size != 0 && nmemb > UINT_MAX / size)
+	if (size != 0 && len > UINT_MAX) //calloc limit only until maximum unsigned int
 		return (NULL);
-	ptr = (void *)malloc(nmemb * size);
+	ptr = (void *)malloc(len * size);
 	if (ptr == NULL)
 		return (NULL);
-	ft_bzero(ptr, (nmemb * size));
+	ft_bzero(ptr, (len * size));
 	return (ptr);
 }
 
@@ -55,4 +55,32 @@ void	*ft_calloc(size_t nmemb, size_t size)
 //     free(arr_calloc);
 
 //     return 0;
+// }
+
+// int main()
+// {
+// 	//int len = 2147483645;
+// 	// int max = 1073741824;
+// 	int max = 2147483647;
+// 	int len = max;
+// 	int len2 = max;
+// 	int *i = calloc(len, sizeof(int));
+// 	if (i == NULL)
+// 	{
+// 		printf("len: failed to allocate memory\n");
+// 	}
+// 	else
+// 	{
+// 		printf("len: Memory allocated successfully\n");
+// 	}
+
+// 	int *j = ft_calloc(len2, sizeof(int));
+// 	if (j == NULL)
+// 	{
+// 		printf("len2: failed to allocate memory\n");
+// 	}
+// 	else
+// 	{
+// 		printf("len2: Memory allocated successfully\n");
+// 	}
 // }
