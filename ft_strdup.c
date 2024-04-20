@@ -37,20 +37,15 @@ char	*ft_strdup(const char *s)
 // #include <stdio.h>
 // #include <stdlib.h>
 // #include <string.h>
-
-// int main()
+// int main(int ac, char **av)
 // {
-// 	char *str = "world";
+// 	(void)ac;
+// 	char *str = av[1];
 
 // 	char *dup = strdup(str);
 // 	char *dup2 = ft_strdup(str);
-// 	if(dup == NULL || dup2 == NULL)
-// 		return 0;
-// 	dup[0] = 'd';
-// 	dup2[0] = 'd';
-// 	printf("original:%s\n", str);
-// 	printf("strdup:%s\n", dup);
-// 	printf("ft_strdup:%s\n", dup2);
+// 	printf("strdup: %s\n", dup);
+// 	printf("ft_strdup: %s\n", dup2);
 
 // 	free(dup);	
 // }
