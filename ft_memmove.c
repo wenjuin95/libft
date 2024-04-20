@@ -44,20 +44,32 @@ void	*ft_memmove(void *dest, const void *src, size_t n)
 // #include <stdio.h>
 // #include <string.h>
 
-// int main()
+// int main() 
 // {
-//     char s1[] = "oldstring";
-//     char s2[] = "newstring";
-//     printf("before:\n");
-//     printf("s1:%s\n", s1);
-//     printf("s2:%s\n\n", s2);
-//     memmove(s1, s2, 9);
-//     printf("after memmove:\n");
-//     printf("s1:%s\n", s1);
-//     printf("s2:%s\n", s2);
-//     ft_memmove(s1, s2, 9);
-//     memmove(s1, s2, 9);
-//     printf("after ft_memmove:\n");
-//     printf("s1:%s\n", s1);
-//     printf("s2:%s\n", s2);
+//     char s1[8] = "abcdefg";
+//     char s2[8] = "abcdefg";
+
+//     // printf("Before:\n");
+//     // printf("string: %s\n\n", s1);
+
+//     // memmove(s1+2, s1, 4);
+//     // memcpy(s2+2, s2, 4);
+
+//     // // printf("After:\n");
+//     // // printf("s1 (memmove): %s\n", s1); // Expected: "ababcdg"
+//     // // printf("s2 (memcpy): %s\n", s2); // will not work as expected
+
+// 	// // //memmove copy the src into abuffer then copy the buffer into dest
+// 	// // //memcpy copy the src directly into dest
+
+// 	printf("Before:\n");
+//     printf("string: %s\n\n", s1);
+	
+// 	printf("After:\n");
+// 	memmove(s1+2, s1, 4);
+// 	printf("memmove: %s\n", s1);
+// 	ft_memmove(s2+2, s2, 4);
+// 	printf("ft_memmove: %s\n", s2);
+
+//     return 0;
 // }
