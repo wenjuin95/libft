@@ -39,16 +39,6 @@ static long	check_num(long n)
 	return (nb);
 }
 
-static char	*n_memory(size_t n)
-{
-	char	*s;
-
-	s = (char *)malloc(sizeof(char) * (n + 1));
-	if (s == NULL)
-		return (NULL);
-	return (s);
-}
-
 char	*ft_itoa(int n)
 {
 	size_t	nb;
@@ -60,7 +50,7 @@ char	*ft_itoa(int n)
 	if (n < 0)
 		sign = 1;
 	len = count_len(n);
-	str = n_memory(len);
+	str = malloc(sizeof(char) * (len + 1));
 	if (str == NULL)
 		return (NULL);
 	str[len] = '\0';
