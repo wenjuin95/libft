@@ -16,6 +16,7 @@ void	*ft_calloc(size_t len, size_t size)
 {
 	void	*ptr;
 
+	//size != 0: is to prevent allocating zero bytes
 	if (size != 0 && len > UINT_MAX) //calloc limit only until maximum unsigned int
 		return (NULL);
 	ptr = (void *)malloc(len * size);
