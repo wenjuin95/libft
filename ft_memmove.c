@@ -12,6 +12,10 @@
 
 #include "libft.h"
 
+// memmove handle overlapping memory regions safely. It's slightly slower because it checks for overlap and handles it by copying the data in a different order to avoid data corruption.
+//memcpy doesn't handle overlapping memory regions. If the source and destination memory regions overlap in memcpy, it can lead to undefined behavior, potentially causing data corruption or program crashes.
+//if copy to new destination memcpy is more efficient
+
 void	*ft_memmove(void *dest, const void *src, size_t n)
 {
 	char			*d;
