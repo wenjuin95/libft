@@ -15,6 +15,7 @@
 size_t	ft_strlcat(char *dest, const char *src, size_t size)
 {
 	size_t	d_size;
+	size_t	l_size;
 	size_t	total_size;
 	size_t	i;
 
@@ -31,7 +32,7 @@ size_t	ft_strlcat(char *dest, const char *src, size_t size)
 	}
 	dest[d_size] = '\0';
 	//check for the total size of the string
-	if (size <= d_size) 
+	if (size <= d_size)
 		total_size = size + l_size;
 	else
 		total_size = d_size + l_size;

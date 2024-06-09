@@ -68,7 +68,7 @@ void	*ft_memmove(void *dest, const void *src, size_t n)
 
 // 	printf("Before:\n");
 //     printf("string: %s\n\n", s1);
-	
+
 // 	printf("After:\n");
 // 	memmove(s1+2, s1, 4);
 // 	printf("memmove: %s\n", s1);
