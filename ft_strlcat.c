@@ -14,29 +14,26 @@
 
 size_t	ft_strlcat(char *dest, const char *src, size_t size)
 {
-	size_t	d_size;
-	size_t	l_size;
-	size_t	total_size;
+	size_t	d_len;
+	size_t	t_len;
 	size_t	i;
 
 	if (size == 0 && (src == 0 || dest == 0))
 		return (0);
-	d_size = ft_strlen(dest);
-	l_size = ft_strlen(src);
+	d_len = ft_strlen(dest);
+	if (size <= d_len)
+		return (size + ft_strlen(src));
+	else
+		t_len = d_len + ft_strlen(src);
 	i = 0;
-	while (src[i] && d_size < size - 1)
+	while (src[i] && d_len < size - 1)
 	{
-		dest[d_size] = src[i];
-		d_size++;
+		dest[d_len] = src[i];
+		d_len++;
 		i++;
 	}
-	dest[d_size] = '\0';
-	//check for the total size of the string
-	if (size <= d_size)
-		total_size = size + l_size;
-	else
-		total_size = d_size + l_size;
-	return (total_size); //return a number of characters that should have been copied
+	dest[d_len] = '\0';
+	return (t_len);
 }
 /*
 #include <stdio.h>
