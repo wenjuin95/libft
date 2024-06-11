@@ -20,7 +20,7 @@ char	*ft_strnstr(char const *haystack, char const *needle, size_t n)
 	if (n == 0 && haystack == 0)
 		return (0);
 	i = 0;
-	if (needle == 0)
+	if (*needle == 0)
 		return ((char *)haystack);
 	while (haystack[i] && i < n)
 	{
@@ -29,7 +29,7 @@ char	*ft_strnstr(char const *haystack, char const *needle, size_t n)
 		{
 			if (needle[j + 1] == '\0')
 			{
-				return ((char *)haystack + i); //return the position of the first character of the needle
+				return ((char *)haystack[i]); //return the position of the first character of the needle
 			}
 			j++;
 		}
