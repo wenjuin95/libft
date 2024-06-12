@@ -12,12 +12,29 @@
 
 #include "libft.h"
 
+/*
+#1
+This check helps ensure that ft_calloc behaves safely and predictably, preventing undefined behavior and potential security issues.
+1. Avoids division by zero.
+2. Prevents integer overflow when calculating the total number of bytes to allocate.
+(the function returns NULL, indicating that the allocation request is invalid.)
+
+Valid Case:
+len = 10, size = 4: The total allocation size is 40 bytes, which is valid and won't overflow.
+
+Overflow Case:
+len = UINT_MAX, size = 2: UINT_MAX * 2 would overflow, so len > UINT_MAX / size evaluates to true, and the function returns NULL.
+
+Zero Size Case:
+len = 10, size = 0: size != 0 is false, so the condition fails and the function doesn't return NULL immediately based on this check. The subsequent malloc would handle this case.
+This check helps ensure that ft_calloc behaves safely and predictably, preventing undefined behavior and potential security issues.
+*/
 void	*ft_calloc(size_t len, size_t size)
 {
 	void	*ptr;
 
-	//size != 0: is to prevent allocating zero bytes
-	if (size != 0 && len > UINT_MAX) //calloc limit only until maximum unsigned int
+
+	if (size != 0 && len > UINT_MAX / size) //prevent overflow [ref #1]
 		return (NULL);
 	ptr = (void *)malloc(len * size);
 	if (ptr == NULL)
