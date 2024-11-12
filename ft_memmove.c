@@ -77,3 +77,28 @@ void	*ft_memmove(void *dest, const void *src, size_t n)
 
 //     return 0;
 // }
+
+// int main()
+// {
+
+//     clock_t start, end;
+//     double cpu_time_used;
+// 	char src[12] = "Hello World!";
+// 	char src2[12] = "Hello World!";
+
+//     // Benchmark ft_memmove_malloc
+//     start = clock();
+//     ft_memmove_malloc(src+2, src, 4);
+//     end = clock();
+//     cpu_time_used = ((double) (end - start)) / CLOCKS_PER_SEC;
+//     printf("ft_memmove_malloc took %f seconds to execute \n", cpu_time_used);
+
+//     // Benchmark ft_memmove
+//     start = clock();
+//     ft_memmove(src2+2, src2, 4);
+//     end = clock();
+//     cpu_time_used = ((double) (end - start)) / CLOCKS_PER_SEC;
+//     printf("ft_memmove took %f seconds to execute \n", cpu_time_used);
+
+//     return 0;
+// }
